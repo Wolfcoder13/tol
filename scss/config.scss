@@ -1,6 +1,8 @@
 $max-width: 1200px;
 $gutter: 20px;
 
+$color-1: #ff7000;
+
 @mixin row() {
   display: flex;
 
