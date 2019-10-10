@@ -7,14 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "browser-sync": "browser-sync start --server --files index.html styles.css",
     "sass": "node-sass --source-map-embed styles.scss styles.css",
-    "sass-watch": "node-sass --source-map-embed --watch styles.scss styles.css",
-    "dev": "npm-run-all --parallel sass-watch browser-sync",
+    "sass-watch": "node-sass --source-map-embed -rw styles.scss styles.css",
+    "dev": "concurrently  npm:sass-watch npm:browser-sync",
     "lint": "stylelint styles.scss --syntax scss"
   },
   "author": "Andri",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.7",
+    "concurrently": "^5.0.0",
     "node-sass": "^4.12.0",
     "npm-run-all": "^4.1.5",
     "stylelint": "^11.0.0",
